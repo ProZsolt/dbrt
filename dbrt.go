@@ -132,6 +132,13 @@ func ReportMeterReading(fizkod string, reading int) error {
 	if err != nil {
 		return err
 	}
+
+	if fizkodResp.Diktalhat != "true" {
+		message := strings.TrimPrefix(fizkodResp.Message, "<span class=\"fail\">")
+		message = strings.TrimSuffix(message, "</span>")
+		return fmt.Errorf(message)
+	}
+
 	formdata := map[string][]byte{
 		"action":           []byte("meroallas"),
 		"merok_szama":      []byte(strconv.Itoa(fizkodResp.MerokSzama)),

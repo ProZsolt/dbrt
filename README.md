@@ -14,10 +14,11 @@ package main
 import (
   "github.com/prozsolt/dbrt"
 )
-
-err := dbrt.ReportMeterReading("FIZETO_AZONOSITO", 1337)
-if err != nil {
-  // handle error
+func main(){
+  err := dbrt.ReportMeterReading("FIZETO_AZONOSITO", 1337)
+  if err != nil {
+    // handle error
+  }
 }
 ```
 
