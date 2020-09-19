@@ -146,7 +146,7 @@ func ReportMeterReading(fizkod string, reading int) error {
 		"gyariSzam_1":      []byte(fizkodResp.Merok.Mero1.GyariSzam),
 		"elozoMeroallas_1": []byte(fizkodResp.Merok.Mero1.ElozoMeroallas),
 		"mhKod_1":          []byte(fizkodResp.Merok.Mero1.MhKod),
-		"meroallas_1":      []byte(strconv.Itoa(207)),
+		"meroallas_1":      []byte(strconv.Itoa(reading)),
 	}
 	err = meroallasCall(formdata)
 	if err != nil {
