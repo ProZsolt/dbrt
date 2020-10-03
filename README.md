@@ -15,7 +15,8 @@ import (
   "github.com/prozsolt/dbrt"
 )
 func main(){
-  err := dbrt.ReportMeterReading("FIZETO_AZONOSITO", 1337)
+  meterReading := 1337
+  err := dbrt.ReportMeterReading("FIZETO_AZONOSITO", meterReading)
   if err != nil {
     // handle error
   }
